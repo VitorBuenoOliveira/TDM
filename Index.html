@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Dia das Mulheres!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 5vw;
+            margin: 0;
+        }
+        .animal {
+            font-size: 6vw;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.2;
+        }
+        .message {
+            font-size: 4vw;
+            margin-top: 15px;
+            color: #555;
+        }
+        .animal-name {
+            font-size: 4.5vw;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 4vw;
+        }
+        .button:hover {
+            background-color: #e85a4f;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 6vw;
+            }
+            .animal {
+                font-size: 7vw;
+            }
+            .message {
+                font-size: 5vw;
+            }
+            .button {
+                font-size: 5vw;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Dia das Mulheres!</h1>
+        <pre class="animal" id="animal"></pre>
+        <div class="animal-name" id="animal-name"></div>
+        <div class="message" id="message"></div>
+        <button class="button" id="surpresaButton" onclick="mostrarSurpresa()">Surpresa!</button>
+    </div>
+    <script>
+        const animais = [
+            {
+                nome: "Gato",
+                arte: ` /\\_/\\  \n( o.o )  \n > ^ <`,
+                mensagem: "Você pegou um Gato! Independência e sabedoria. Você é forte e sabe encontrar seu próprio caminho! Feliz Dia das Mulheres!"
+            },
+            {
+                nome: "Coelho",
+                arte: `(\\(\\  \n(✿•ㅅ•)  \n((')(")❤`,
+                mensagem: "Você pegou um Coelho! Doçura e energia. Sua presença ilumina o ambiente e contagia todos ao redor! Feliz Dia das Mulheres!"
+            },
+            {
+                nome: "Urso",
+                arte: `  ʕ•ᴥ•ʔ  \n  (•❤•)  \n  (  :  )  `,
+                mensagem: "Você pegou um Urso! Força e proteção. Você é uma pessoa poderosa, mas também cheia de carinho para aqueles que ama! Feliz Dia das Mulheres!"
+            },
+            {
+                nome: "Panda",
+                arte: `   ʕ•ᴥ•ʔ  \n   (  ❤  )  \n   (   :   )  `,
+                mensagem: "Você pegou um Panda! Equilíbrio e paz. Sua energia tranquila traz harmonia e conforto para quem está perto de você! Feliz Dia das Mulheres!"
+            },
+            {
+                nome: "Raposa",
+                arte: `  /\\_/\\  \n ( •ᴥ• )  \n  (  ❤  )  `,
+                mensagem: "Você pegou uma Raposa! Astúcia e encanto. Você cativa a todos com sua inteligência e carisma! Feliz Dia das Mulheres!"
+            }
+        ];
+        
+        function mostrarSurpresa() {
+            const animalEscolhido = animais[Math.floor(Math.random() * animais.length)];
+            document.getElementById("animal").textContent = animalEscolhido.arte;
+            document.getElementById("animal-name").textContent = animalEscolhido.nome;
+            document.getElementById("message").textContent = animalEscolhido.mensagem;
+            
+            // Remover o botão após o clique
+            document.getElementById("surpresaButton").style.display = "none";
+        }
+    </script>
+</body>
+</html>
